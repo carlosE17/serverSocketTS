@@ -25,7 +25,17 @@ let ejer=1;
 let http = require("http").Server(app);
 // set up socket.io and bind it to our
 // http server.
-let io = require("socket.io")(http);
+let io = require("socket.io")(http, {
+    handlePreflightRequest: (req :any, res:any) => {
+        const headers = {
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
+            "Access-Control-Allow-Origin": req.headers.origin, //or the specific origin you want to give access to,
+            "Access-Control-Allow-Credentials": true
+        };
+        res.writeHead(200, headers);
+        res.end();
+    }
+});
 
 app.get("/", (req: any, res: any) => {
     res.send("funciona!! (^_^)/");
