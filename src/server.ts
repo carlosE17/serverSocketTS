@@ -4,7 +4,7 @@ import * as path from "path";
 const bodyParser = require('body-parser');
 
 const app = express();
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 8080);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -79,6 +79,6 @@ io.on("connection", function (socket: any) {
 
 });
 
-const server = http.listen(3000, function () {
-    console.log("listening on *:3000");
+const server = http.listen(8080, function () {
+    console.log("listening on *:8080");
 });
