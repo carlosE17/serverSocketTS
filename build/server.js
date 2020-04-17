@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require('express');
+//import cors from 'cors';
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 app.set("port", process.env.PORT || 8080);
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 let peso = 0;

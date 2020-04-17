@@ -1,10 +1,13 @@
 var express = require('express');
 import * as socketio from "socket.io";
 import * as path from "path";
+//import cors from 'cors';
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
 app.set("port", process.env.PORT || 8080);
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
