@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 8080);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 let peso = 0;
@@ -55,7 +55,7 @@ io.on("connection", function (socket) {
     socket.emit('malas', malas);
     socket.emit('ejercicio', ejer);
 });
-const server = http.listen(3000, function () {
-    console.log("listening on *:3000");
+const server = http.listen(8080, function () {
+    console.log("listening on *:8080");
 });
 //# sourceMappingURL=server.js.map
