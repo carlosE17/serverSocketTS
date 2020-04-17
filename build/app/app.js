@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // lib/app.ts
-var express = require("express"); // Create a new express application instance
-var app = express();
+const express = require("express"); // Create a new express application instance
+const app = express();
 app.get('/', function (req, res) {
     res.send('Hello World!');
 });

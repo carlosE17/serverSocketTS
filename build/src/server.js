@@ -1,12 +1,15 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require('express');
-//import cors from 'cors';
-const cors = require('cors');
+const cors_1 = __importDefault(require("cors"));
+//const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 app.set("port", process.env.PORT || 8080);
-app.use(cors());
+app.use(cors_1.default());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 let peso = 0;
@@ -61,4 +64,3 @@ io.on("connection", function (socket) {
 const server = http.listen(8080, function () {
     console.log("listening on *:8080");
 });
-//# sourceMappingURL=server.js.map
